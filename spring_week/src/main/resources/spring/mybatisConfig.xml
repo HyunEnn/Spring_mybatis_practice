@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<typeAliases>
+	<typeAlias type="com.ssafy.spring.dto.MemberDto" alias="memdto"/>
+	<typeAlias type="com.ssafy.spring.dto.MobileDto" alias="mobdto"/>
+</typeAliases>
+  
+  <mappers>
+    <mapper resource="mapper/memberMapper.xml"/>
+    <mapper resource="mapper/mobileMapper.xml"/>
+  </mappers>
+</configuration>

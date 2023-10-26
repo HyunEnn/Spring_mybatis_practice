@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ssafy.spring.repository.MobileRepository">
+  <!-- <select id="selectBlog" resultType="Blog">
+    select * from Blog where id = #{id}
+  </select> -->
+  <insert id="MobileInsert" parameterType="mobdto">
+  	insert into mobile(mobileCode, model, price, company)
+  	values (#{mobileCode}, #{model}, #{price}, #{company})
+  </insert>
+  <select id="MobileView" parameterType="mobdto" resultType="mobdto">
+  	select mobileCode, model, price, company 
+  	from mobile
+  	where mobileCode = #{mobileCode}
+  </select>
+  <update id="MobileUpdate" parameterType="mobdto">
+  	update mobile set mobileCode = #{mobileCode}, model = #{model}, price = #{price}, company = #{company}
+  	where mobileCode = #{mobileCode}
+  </update>
+  <delete id="MobileDelete" parameterType="mobdto">
+  	delete from mobile
+  	where mobileCode = #{mobileCode}
+  </delete>
+  <select id="listMobile" resultType="mobdto">
+  	select mobileCode, model, price, company
+  	from mobile
+  </select>
+  <select id="listMobilePage" parameterType="map" resultType="mobdto">
+  	select mobileCode, model, price, company
+  	from mobile
+  	limit #{currentPage}, #{sizePerPage}
+  </select>
+  <select id="getTotalMobileCnt" resultType="int">
+  	select count(*) as cnt from mobile
+  </select>
+  <select id="findMobile" parameterType="String" resultType="mobdto">
+  	select mobileCode, model, price, company
+  	from mobile
+  	where mobileCode = #{mobileCode}
+  </select>
+</mapper>
