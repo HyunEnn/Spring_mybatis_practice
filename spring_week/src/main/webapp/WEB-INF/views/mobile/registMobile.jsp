@@ -7,6 +7,7 @@
 <html>
 <head>
 	<%@ include file="/WEB-INF/views/include/head.jsp" %>
+	<%@ include file="/WEB-INF/views/include/confirm.jsp"%>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/nav.jsp" %>

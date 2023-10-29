@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -80,6 +81,17 @@ public class PhoneController {
 		MobileDto findMobile = service.findMobile(mobileCode);
 		service.MobileDelete(findMobile);
 		return "redirect:/mobile/list";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error/error";
+		}
+	}
+	
+	@GetMapping("/update")
+	public String UpdatePhone(@ModelAttribute("mobile") MobileDto mobileDto) {
+		try {
+			service.MobileUpdate(mobileDto);
+			return "mobile/detailMobile";
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error/error";

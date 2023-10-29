@@ -6,6 +6,7 @@
 <html>
 <head>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
+<%@ include file="/WEB-INF/views/include/confirm.jsp"%>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
@@ -15,6 +16,7 @@
 
 		<h2>핸드폰 상세 정보</h2>
 		<a class="btn btn-danger" href="${root }/mobile/delete?mobileCode=${mobile.mobileCode}">삭제</a>
+		<a class="btn btn-primary" href="${root }/mobile/update">수정</a>
 		<table class="table table-striped">
 			<tr>
 				<td>고유번호</td>
